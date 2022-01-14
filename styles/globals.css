@@ -14,3 +14,20 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* Nav */
+nav,
+.download-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-icon-container {
+  align-items: center;
+  column-gap: 0.5rem;
+  text-decoration: none;
+}
+.nav-icon-container > span {
+  flex-direction: column;
+}
+/* end of Nav */
