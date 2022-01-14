@@ -20,8 +20,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <MyNav />
-        <MyHeader />
+        <div className="header-nav">
+          <MyNav />
+          <MyHeader />
+        </div>
         <MyHero />
         <MySlider />
         <MyWhyShopline />

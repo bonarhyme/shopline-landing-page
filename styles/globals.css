@@ -1,3 +1,8 @@
+:root {
+  --blue: rgb(23, 23, 173);
+  --blue-2: rgb(203, 219, 240);
+}
+
 html,
 body {
   padding: 0;
@@ -31,3 +36,110 @@ nav,
   flex-direction: column;
 }
 /* end of Nav */
+
+/* Header */
+
+.header-nav {
+  background-image: linear-gradient(to top, white, var(--blue-2));
+}
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+}
+header h1 {
+  text-align: center;
+}
+header h1 > span {
+  display: block;
+  text-align: center;
+  position: relative;
+  margin: 2rem auto;
+  margin-top: 1.5rem;
+  width: 200px;
+}
+header h1 > span::after,
+header h1 > span::before {
+  content: "";
+  border: 1px solid var(--blue);
+  height: 50px;
+  width: 200px;
+  display: inline-block;
+  position: absolute;
+  left: 130px;
+  top: -10px;
+  transform: translateX(-50%) skew(-60deg);
+  transform-origin: 100% 0;
+  border-radius: 50%;
+  z-index: 10;
+}
+header h1 > span::before {
+  top: -8px;
+  left: 123px;
+}
+@media (min-width: 768px) {
+  header h1 > span::after,
+  header h1 > span::before {
+    top: 0;
+  }
+}
+.notice {
+  font-size: 1.2rem;
+}
+
+.auth-container {
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
+
+.auth-container > * {
+  margin-right: 2rem;
+  text-decoration: none;
+}
+
+.auth-container > a:nth-child(odd),
+.auth-container > a:nth-child(even) {
+  font-size: 1.2rem;
+  background-color: var(--blue);
+  color: white;
+  padding: 0.5rem 0.8rem;
+  border-radius: 18px;
+}
+
+.auth-container > a:nth-child(even) {
+  background-color: var(--blue-2);
+  color: var(--blue);
+}
+
+.header-list {
+  display: flex;
+  column-gap: 2rem;
+  justify-content: center;
+  margin: auto;
+}
+.header-list > * {
+  text-align: center;
+  padding-right: 1.5rem;
+  font-size: 0.8rem;
+  border-right: 2px solid gray;
+  display: flex;
+  align-items: center;
+}
+
+.header-list > .last,
+.header-list > *.last::after {
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .header-list > * {
+    padding-right: 1rem;
+    flex-direction: column;
+  }
+  .header-list b {
+    display: block;
+  }
+}
+/* End of Header */
