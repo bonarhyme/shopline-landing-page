@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Slide from "./Slide";
 import { sliderData } from "./slider-data";
-
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const MySlider = () => {
   const [index, setIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(sliderData.length - 1);
@@ -46,25 +46,31 @@ const MySlider = () => {
   }, [index]);
 
   return (
-    <div>
+    <div className="slider-container">
       <Slide
         description={sliderData[prevIndex].text}
         image={sliderData[prevIndex].image}
         name={sliderData[prevIndex].name}
+        hide
       />
-      <div>
-        <button onClick={handlePrev}>Prev</button>
+      <div className="center-slide">
+        <button onClick={handlePrev} className="prev-slider-btn">
+          <FaChevronLeft size={25} />
+        </button>
         <Slide
           description={sliderData[index].text}
           image={sliderData[index].image}
           name={sliderData[index].name}
         />
-        <button onClick={handleNext}>Next</button>
+        <button onClick={handleNext} className="next-slider-btn">
+          <FaChevronRight size={25} />
+        </button>
       </div>
       <Slide
         description={sliderData[nextIndex].text}
         image={sliderData[nextIndex].image}
         name={sliderData[nextIndex].name}
+        hide
       />
     </div>
   );

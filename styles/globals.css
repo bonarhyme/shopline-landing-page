@@ -172,6 +172,7 @@ header h1 > span::before {
 .hero {
   background-color: var(--green);
   margin-top: 4rem;
+  padding-bottom: 2rem;
 }
 .hero-header {
   display: flex;
@@ -187,6 +188,7 @@ header h1 > span::before {
     flex-direction: column;
     height: fit-content;
     align-items: center;
+    gap: 1rem;
   }
 }
 
@@ -261,3 +263,78 @@ header h1 > span::before {
   font-weight: 500;
 }
 /* End o Hero */
+
+/* Slider */
+
+.slide,
+.center-slide {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.slider-image {
+  border-radius: 50%;
+}
+.slide-name {
+  font-weight: 600;
+}
+
+.slide-text {
+  /* font-style: italic; */
+  letter-spacing: 1px;
+  width: 100%;
+  /* font-weight: 500; */
+}
+
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.slider-container > * {
+  background-color: rgba(255, 255, 255, 0.63);
+  opacity: 0.5;
+  border-radius: 10px;
+  padding: 2rem 1rem;
+}
+.center-slide {
+  background-color: white;
+  opacity: 1;
+  position: relative;
+}
+.prev-slider-btn,
+.next-slider-btn {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  border: 3px solid var(--green);
+  background-color: white;
+  position: absolute;
+}
+
+.prev-slider-btn:hover,
+.next-slider-btn:hover {
+  background-color: var(--blue-2);
+}
+.prev-slider-btn {
+  left: -34px;
+  top: 50%;
+}
+
+.next-slider-btn {
+  right: -34px;
+  top: 50%;
+}
+@media (max-width: 768px) {
+  .hide-slider-xs {
+    display: none;
+  }
+  /*
+  .slider-container {
+    justify-content: center;
+  } */
+}
+/* End of slider */

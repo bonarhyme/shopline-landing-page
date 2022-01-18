@@ -1,20 +1,21 @@
 import Image from "next/image";
 import React from "react";
 
-const Slide = ({ image, description, name }) => {
+const Slide = ({ image, description, name, hide, className }) => {
   return (
-    <article>
+    <article className={`${className} slide ${hide && "hide-slider-xs"}`}>
       <div className="image-container">
         <Image
           src={image}
           alt={name}
-          width={200}
-          height={200}
-          objectFit="contain"
+          width={100}
+          height={100}
+          objectFit="cover"
+          className="slider-image"
         />
-        <p>{name}</p>
+        <p className="slide-name">{name}</p>
       </div>
-      <p>{description}</p>
+      <q className="slide-text">{description}</q>
     </article>
   );
 };
