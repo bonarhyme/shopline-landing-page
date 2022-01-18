@@ -1,6 +1,8 @@
 :root {
-  --blue: rgb(23, 23, 173);
+  --blue: #5458f7;
   --blue-2: rgb(203, 219, 240);
+  --text: #424242;
+  --green: rgba(70, 215, 241, 0.233);
 }
 
 html,
@@ -9,6 +11,10 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+* {
+  color: var(--text);
 }
 
 a {
@@ -52,7 +58,8 @@ header {
 header h1 {
   text-align: center;
 }
-header h1 > span {
+header h1 > span,
+.hero-header > h2 > span {
   display: block;
   text-align: center;
   position: relative;
@@ -61,7 +68,9 @@ header h1 > span {
   width: 200px;
 }
 header h1 > span::after,
-header h1 > span::before {
+header h1 > span::before,
+.hero-header > h2 > span::after,
+.hero-header > h2 > span::before {
   content: "";
   border: 1px solid var(--blue);
   height: 50px;
@@ -81,7 +90,8 @@ header h1 > span::before {
 }
 @media (min-width: 768px) {
   header h1 > span::after,
-  header h1 > span::before {
+  header h1 > span::before.hero-header > h2 > span::after,
+  .hero-header > h2 > span::before {
     top: 0;
   }
 }
@@ -157,3 +167,97 @@ header h1 > span::before {
   }
 }
 /* End of Header */
+
+/* Hero */
+.hero {
+  background-color: var(--green);
+  margin-top: 4rem;
+}
+.hero-header {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  height: 15rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-header {
+    flex-direction: column;
+    height: fit-content;
+    align-items: center;
+  }
+}
+
+.hero-header-p {
+  background-color: white;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero-header-p.top {
+  align-self: flex-start;
+}
+.hero-header-p.bottom {
+  align-self: flex-end;
+}
+
+.hero-header-p > b {
+  font-size: 1.5rem;
+  color: rgba(255, 0, 0, 0.822);
+  font-weight: 700;
+  margin-top: -1rem;
+}
+
+.hero-header-p > b.green {
+  color: green;
+}
+
+.hero-header-p > small {
+  font-size: 0.6rem;
+}
+.hero-header > h2 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+/* The remaining syle is bove in the header */
+.hero-header > h2 > span {
+  display: inline;
+  font-size: 2rem;
+}
+.hero-header > h2 > span::after,
+.hero-header > h2 > span::before {
+  width: 120px;
+  left: 70px;
+  height: 40px;
+  top: -2px;
+  border-color: var(--text);
+}
+
+.hero-header > h2 > span::before {
+  top: 1px;
+}
+
+@media (min-width: 769px) {
+  .hero-header-p.top {
+    align-self: flex-end;
+  }
+  .hero-header-p.bottom {
+    align-self: flex-start;
+  }
+  .hero-header > h2 {
+    align-self: center;
+  }
+}
+
+.hero-header > h2 > small {
+  font-size: 1rem;
+  font-weight: 500;
+}
+/* End o Hero */

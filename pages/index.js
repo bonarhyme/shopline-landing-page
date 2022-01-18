@@ -24,8 +24,10 @@ export default function Home() {
           <MyNav />
           <MyHeader />
         </div>
-        <MyHero />
-        <MySlider />
+        <div className="hero">
+          <MyHero />
+          <MySlider />
+        </div>
         <MyWhyShopline />
         <MyFooter />
       </main>
