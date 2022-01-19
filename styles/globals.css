@@ -434,3 +434,82 @@ header h1 > span::before {
 }
 
 /* End of why choose */
+
+/* footer */
+footer {
+  background-color: var(--blue-2);
+  padding-bottom: 2rem;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem 3rem;
+  flex-wrap: wrap;
+}
+
+ul.ul {
+  padding: 0;
+  list-style: none;
+}
+
+ul.ul > li {
+  padding-top: 1rem;
+}
+
+ul.ul > li > a,
+address {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+ul.ul > li > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-div-1 > a {
+  display: block;
+  margin-top: 1rem;
+}
+
+.social-icons > a {
+  margin-right: 1rem;
+}
+
+button[type="submit"] {
+  margin-left: 1rem;
+  border: 1px solid red;
+  background-color: red;
+  padding: 0.2rem 1rem;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.8rem;
+  height: 2rem;
+}
+
+@media (max-width: 480px) {
+  button[type="submit"] {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
+input {
+  border: 2px solid var(--text);
+  border-radius: 5px;
+  padding: 0.3rem;
+}
+
+label {
+  font-size: 0.8rem;
+  color: #42424262;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--blue);
+}
+/* end of footer */
