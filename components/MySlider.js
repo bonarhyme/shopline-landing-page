@@ -46,33 +46,39 @@ const MySlider = () => {
   }, [index]);
 
   return (
-    <div className="slider-container">
-      <Slide
-        description={sliderData[prevIndex].text}
-        image={sliderData[prevIndex].image}
-        name={sliderData[prevIndex].name}
-        hide
-      />
-      <div className="center-slide">
-        <button onClick={handlePrev} className="prev-slider-btn">
-          <FaChevronLeft size={25} />
-        </button>
+    <>
+      <div className="slider-container">
         <Slide
-          description={sliderData[index].text}
-          image={sliderData[index].image}
-          name={sliderData[index].name}
+          description={sliderData[prevIndex].text}
+          image={sliderData[prevIndex].image}
+          name={sliderData[prevIndex].name}
+          hide
         />
-        <button onClick={handleNext} className="next-slider-btn">
-          <FaChevronRight size={25} />
-        </button>
+        <div className="center-slide">
+          <button onClick={handlePrev} className="prev-slider-btn">
+            <FaChevronLeft size={25} />
+          </button>
+          <Slide
+            description={sliderData[index].text}
+            image={sliderData[index].image}
+            name={sliderData[index].name}
+          />
+          <button onClick={handleNext} className="next-slider-btn">
+            <FaChevronRight size={25} />
+          </button>
+        </div>
+        <Slide
+          description={sliderData[nextIndex].text}
+          image={sliderData[nextIndex].image}
+          name={sliderData[nextIndex].name}
+          hide
+        />
       </div>
-      <Slide
-        description={sliderData[nextIndex].text}
-        image={sliderData[nextIndex].image}
-        name={sliderData[nextIndex].name}
-        hide
-      />
-    </div>
+      <p className="rating-notice">
+        <b>4.6</b>
+        <small>Rating on Playstore</small>
+      </p>
+    </>
   );
 };
 
