@@ -50,7 +50,7 @@ const Faq = () => {
   return (
     <>
       <main className="faq">
-        <section className="header-nav">
+        <section className="header-nav remove-padding">
           <MyNav />
 
           <article className="faq-questions">
