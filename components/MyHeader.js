@@ -1,4 +1,5 @@
 import React from "react";
+import CreateButton from "./CreateButton";
 
 const MyHeader = () => {
   return (
@@ -7,11 +8,7 @@ const MyHeader = () => {
         Create your online shop just in <span>2 minutes</span>
       </h1>
       <p className="notice">No website needed</p>
-      <div className="auth-container">
-        <a href="#">Create Shop for Free</a>
-
-        <a href="#">Login</a>
-      </div>
+      <CreateButton />
       <section className="center">
         <div className="header-list">
           <p data-aos="fade-right">
