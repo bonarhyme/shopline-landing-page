@@ -1,7 +1,10 @@
+import Image from "next/image";
 import React from "react";
 import CreateButton from "../components/CreateButton";
 import MyFooter from "../components/MyFooter";
 import MyNav from "../components/MyNav";
+
+import celebration from "../images/celebration.PNG";
 
 const HowItWorks = () => {
   return (
@@ -46,7 +49,17 @@ const HowItWorks = () => {
             </div>
           </article>
           <article className="faq-compel">
-            <h2>Congrats!! you are now ready to launch your online shop</h2>
+            <h2>
+              Congrats!!{" "}
+              <Image
+                src={celebration}
+                alt=""
+                width={50}
+                height={50}
+                objectFit="contain"
+              />{" "}
+              you are now ready to launch your online shop
+            </h2>
             <CreateButton text1="YES, I AM IN" showLink2={false} />
           </article>
         </section>
