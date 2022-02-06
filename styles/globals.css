@@ -32,6 +32,10 @@ a {
   box-sizing: border-box;
 }
 
+.cursor {
+  cursor: pointer;
+}
+
 /* Nav */
 nav,
 .download-container {

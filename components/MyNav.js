@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { Container } from "react-bootstrap";
 import { appData } from "../variables/data";
@@ -8,13 +9,16 @@ const MyNav = () => {
     <Container fluid>
       <nav>
         <div className="logo-container">
-          <Image
-            src={appData.logo}
-            alt="shopline logo"
-            width={150}
-            height={80}
-            objectFit="contain"
-          />
+          <Link passHref href="/">
+            <Image
+              src={appData.logo}
+              alt="shopline logo"
+              width={150}
+              height={80}
+              objectFit="contain"
+              className="cursor"
+            />
+          </Link>
         </div>
         <div className="download-container">
           <a

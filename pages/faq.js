@@ -3,31 +3,41 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import CreateButton from "../components/CreateButton";
 import MyFooter from "../components/MyFooter";
 import MyNav from "../components/MyNav";
+import Link from "next/link";
+import parse from "html-react-parser";
 
 const data = [
   {
     summary: "How much does it cost?",
-    p: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    p: `Shopline is free to use. No setup fees charged. No commissions. No ads. No hidden charges.. If you'd love to support please send us an email at <a href="mailto:support@joinshopline.com">support@joinshopline.com</a>`,
   },
   {
     summary: "What do I need to get started?",
-    p: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    p: "All you need is your phone with mobile data and download the Shopline app here",
   },
   {
     summary: "In what countries is Shopline available?",
-    p: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    p: "Shopline is available to any entrepreneur on the African continent. You can sell anytime, anywhere and to anyone",
   },
   {
     summary: "What are the benefits of selling with Shopline?",
-    p: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    p: `•No
+    commissions so you enjoy higher profits selling on Shopline<br />•Save 80%
+    mobile data selling online by receiving orders through SMS. No
+    carrier charges applied.<br />•Easy to use, all you need is 2 minutes and
+    you ready to start receiving orders. No delays.<br />•More customers.
+    1000s of orders have been made on Shopline. There's
+    no better time to reach those customers than downloading Shopline now`,
   },
   {
     summary: "How do I receive payments?",
-    p: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.  ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.  ipsum dolor sit amet consectetur adipisicing elit.",
+    p: `Payments are made on delivery by the customer.
+    Digital payments are soon coming your way. You don't wanna miss out`,
   },
   {
     summary: "Why should I use Shopline?",
-    p: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    p: `There's a 1000 reasons to
+    use Shopline. <Link href="/#">Here</Link> are our top 4`,
   },
 ];
 
@@ -69,7 +79,7 @@ const Faq = () => {
                   return (
                     <details key={i}>
                       <summary>{x.summary}</summary>
-                      <p>{x.p}</p>
+                      <p>{parse(x.p)}</p>
                     </details>
                   );
                 })}
