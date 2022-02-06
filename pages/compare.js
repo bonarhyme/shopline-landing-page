@@ -26,7 +26,7 @@ const companies = {
   Jumia: {
     pricing: 0,
     rating: true,
-    support: false,
+    support: true,
     sms: false,
     custom: false,
     real: false,
@@ -82,10 +82,10 @@ const Compare = () => {
             <h2>Lots of amazing features, for less</h2>
             <div className="select-container">
               <span className="compare-span">Compare with</span>{" "}
-              <select onChange={(e) => setCompetitor(e.target.value)}>
-                <option value="" disabled>
-                  Tap here to select
-                </option>
+              <select
+                onChange={(e) => setCompetitor(e.target.value)}
+                defaultValue={competitor}
+              >
                 <option value="Jumia">Jumia</option>
                 <option value="Instagram">Instagram</option>
                 <option value="Whatsapp Business">Whatsapp Business</option>
