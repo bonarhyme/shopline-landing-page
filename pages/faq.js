@@ -37,9 +37,18 @@ const data = [
   {
     summary: "Why should I use Shopline?",
     p: `There's a 1000 reasons to
-    use Shopline. <Link href="/#">Here</Link> are our top 4`,
+    use Shopline. <a href="/#">Here</a> are our top 4`,
   },
 ];
+
+const Here = () => {
+  return (
+    <>
+      There&apos;s a 1000 reasons to use Shopline <Link href="/#why">Here</Link>{" "}
+      are our top 4
+    </>
+  );
+};
 
 const Faq = () => {
   const [list, setList] = useState(data);
@@ -79,7 +88,13 @@ const Faq = () => {
                   return (
                     <details key={i}>
                       <summary>{x.summary}</summary>
-                      <p>{parse(x.p)}</p>
+                      <p>
+                        {x.summary === "Why should I use Shopline?" ? (
+                          <Here />
+                        ) : (
+                          parse(x.p)
+                        )}
+                      </p>
                     </details>
                   );
                 })}

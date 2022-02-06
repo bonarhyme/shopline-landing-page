@@ -4,22 +4,27 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { appData } from "../variables/data";
 
+export const Logo = () => {
+  return (
+    <Link href="/" passHref>
+      <div className="logo-container">
+        <Image
+          src={appData.logo}
+          alt="shopline logo"
+          width={150}
+          height={80}
+          objectFit="contain"
+          className="cursor"
+        />
+      </div>
+    </Link>
+  );
+};
 const MyNav = () => {
   return (
     <Container fluid>
       <nav>
-        <div className="logo-container">
-          <Link passHref href="/">
-            <Image
-              src={appData.logo}
-              alt="shopline logo"
-              width={150}
-              height={80}
-              objectFit="contain"
-              className="cursor"
-            />
-          </Link>
-        </div>
+        <Logo />
         <div className="download-container">
           <a
             href="#"

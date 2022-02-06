@@ -34,7 +34,7 @@ const MyFooter = () => {
               <Link href="/how">How it works</Link>
             </li>
             <li>
-              <Link href="#">Compare</Link>
+              <Link href="/compare">Compare</Link>
             </li>
           </ul>
         </div>

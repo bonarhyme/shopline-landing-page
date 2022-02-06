@@ -3,7 +3,9 @@
 :root {
   --blue: #5458f7;
   --blue-2: rgb(203, 219, 240);
-  --text: #424242;
+  --blue-3: rgb(2, 59, 77);
+  --blue-4: rgb(12, 191, 245);
+  --text: #3b5044;
   --green: rgba(70, 215, 241, 0.233);
   --green-2: rgba(167, 215, 221, 0.356);
   --green-3: rgb(66, 219, 66);
@@ -16,6 +18,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-family: "Nunito", sans-serif;
+  /* width: 100%;
+  max-width: 1800px; */
+  /* display: flex;
+  justify-content: center; */
 }
 
 * {
@@ -67,7 +73,8 @@ header {
   align-items: center;
   padding-top: 3rem;
 }
-header h1 {
+h1,
+h2 {
   text-align: center;
 }
 header h1 > span,
@@ -731,3 +738,107 @@ details p {
   color: var(--green-3);
   font-weight: 600;
 }
+
+/* compare */
+.compare h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.compare h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.compare-span {
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.compare select {
+  padding: 0.8rem;
+  background-color: white;
+  margin-left: 1.5rem;
+  border-radius: 40px;
+  color: gray;
+}
+
+.select-container {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex span {
+  font-weight: 400;
+}
+
+.block {
+  display: block;
+}
+
+table {
+  margin: auto;
+}
+
+@media (max-width: 480px) {
+  table {
+    width: 100%;
+    max-width: 350px;
+  }
+  tr td {
+    padding: 0.5rem;
+    padding-right: 0rem;
+    font-size: 0.8rem;
+    /* height: 4rem; */
+  }
+  .competitor {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--blue-2);
+}
+
+@media (min-width: 481px) {
+  tr td {
+    text-align: center;
+    padding: 0.5rem 0.8rem;
+    padding-right: 5rem;
+    font-size: 1.2rem;
+    height: 4rem;
+  }
+}
+
+tr td,
+tr th {
+  text-align: center;
+}
+
+.faq-compel.blue {
+  background-color: var(--blue-3);
+}
+.faq-compel.blue h2 {
+  color: var(--blue-4);
+  margin-bottom: 2rem;
+}
+
+.faq-compel.blue p {
+  color: rgba(255, 255, 255, 0.74);
+  margin-bottom: 2rem;
+}
+
+.faq-compel.blue a {
+  background-color: var(--blue-4);
+  color: var(--text);
+  font-weight: 400;
+}
+/* ENd of compare */

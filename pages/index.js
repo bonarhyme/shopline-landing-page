@@ -28,7 +28,9 @@ export default function Home() {
           <MyHero />
           <MySlider />
         </div>
-        <MyWhyShopline />
+        <div id="why">
+          <MyWhyShopline />
+        </div>
         <MyFooter />
       </main>
     </>
