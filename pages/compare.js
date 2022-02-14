@@ -11,6 +11,8 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import CreateButton from "../components/CreateButton";
+import jumia from "../images/jumia.svg";
+import Image from "next/image";
 
 const companies = {
   "Whatsapp Business": {
@@ -30,8 +32,17 @@ const companies = {
     sms: false,
     custom: false,
     real: false,
-    engage: true,
-    logo: <FaBox size={30} />,
+    engage: false,
+    logo: (
+      <Image
+        src={jumia}
+        width={80}
+        height={40}
+        objectFit="contain"
+        alt="jumia"
+        size={30}
+      />
+    ),
   },
   Instagram: {
     pricing: 0,
@@ -44,11 +55,11 @@ const companies = {
     logo: <FaInstagram size={30} />,
   },
   Shopify: {
-    pricing: 0,
-    rating: false,
-    support: false,
+    pricing: 299,
+    rating: true,
+    support: true,
     sms: false,
-    custom: false,
+    custom: true,
     real: false,
     engage: true,
     logo: <FaShopify size={30} />,
@@ -56,7 +67,7 @@ const companies = {
   "Safeboda Shop": {
     pricing: 0,
     rating: false,
-    support: false,
+    support: true,
     sms: false,
     custom: false,
     real: false,
