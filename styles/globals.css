@@ -541,9 +541,10 @@ label {
   font-size: 1.1rem;
 }
 .features button[type="submit"] {
-  font-size: 1.5rem;
-  padding: 0.5rem;
+  font-size: 1.3rem;
+  padding: 0.5rem 1.3rem;
   height: fit-content;
+  font-weight: 600;
 }
 .faq-questions,
 .faq-compel {
