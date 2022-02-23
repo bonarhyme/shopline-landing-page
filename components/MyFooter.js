@@ -28,7 +28,7 @@ const MyFooter = () => {
               <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="#">Features</Link>
+              <Link href="/features">Features</Link>
             </li>
             <li>
               <Link href="/how">How it works</Link>

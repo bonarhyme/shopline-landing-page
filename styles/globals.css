@@ -5,6 +5,7 @@
   --blue-2: rgb(203, 219, 240);
   --blue-3: rgb(2, 59, 77);
   --blue-4: rgb(12, 191, 245);
+  --blue-5: #0b0c61;
   --text: #3b5044;
   --green: rgba(70, 215, 241, 0.233);
   --green-2: rgba(167, 215, 221, 0.356);
@@ -531,12 +532,18 @@ label {
 }
 /* end of footer */
 
-/* Faq  */
-.faq button[type="submit"] {
+/* Faq and features */
+.faq button[type="submit"],
+.features button[type="submit"] {
   background-color: var(--blue);
   border: 1px solid var(--blue);
   border-radius: 30px;
   font-size: 1.1rem;
+}
+.features button[type="submit"] {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  height: fit-content;
 }
 .faq-questions,
 .faq-compel {
@@ -559,7 +566,15 @@ label {
   padding: 1rem;
 }
 
-.faq form {
+.features h1 {
+  color: var(--blue-5);
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.faq form,
+.features form {
   border-radius: 30px;
   background-color: white;
   padding: 0.3rem;
@@ -568,8 +583,15 @@ label {
   margin: 1rem;
 }
 
+.features form {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
 .faq input,
-.faq input:focus {
+.faq input:focus,
+.features input,
+.features input:focus {
   border: 0;
   outline: none;
 }
@@ -605,21 +627,37 @@ details p {
     font-size: 1.2rem;
     font-weight: 600;
   }
-  .faq form {
+  .faq form,
+  .features form {
     margin-bottom: 2rem;
     border-radius: 7px;
     width: 100%;
   }
-  .faq button {
+  .faq button,
+  .features button {
     margin: auto;
     display: block;
   }
-  .faq input {
+  .faq input,
+  .features input {
     border-radius: 30px;
     font-size: 1.3rem;
   }
-  .faq button[type="submit"] {
+  .faq button[type="submit"],
+  .features button[type="submit"] {
     border-radius: 4px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .features button[type="submit"] {
+    width: 100%;
+    margin-left: 0;
+    border-radius: 20px;
+  }
+  .features h1 {
+    font-size: 2.5rem;
   }
 }
 
@@ -640,6 +678,9 @@ details p {
 @media (max-width: 480px) {
   .hide-xs {
     display: none;
+  }
+  .features h1 {
+    font-size: 2rem;
   }
 }
 
@@ -842,3 +883,89 @@ tr th {
   font-weight: 400;
 }
 /* ENd of compare */
+
+/* Features... Extended from faq */
+.features-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+}
+
+.features-container section {
+  /* border: 1px solid var(--blue-2); */
+  background-color: white;
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem 1.5rem;
+  border-radius: 30px;
+  margin: 2rem 0;
+  box-shadow: 0 0 10px rgb(187, 186, 186);
+  z-index: 10;
+}
+.features-container section h2 {
+  text-align: left;
+  color: var(--blue-5);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.features-container section p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.features-container .center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 769px) {
+  .features-container .center {
+    flex-direction: row;
+  }
+  .features-container > section:nth-of-type(1),
+  .features-container > section:nth-of-type(2),
+  .features-container > .center > section:nth-of-type(1),
+  .features-container > .center > section:nth-of-type(2) {
+    position: relative;
+  }
+  .features-container > section:nth-of-type(1)::after,
+  .features-container > section:nth-of-type(2)::after {
+    content: "";
+    width: 7px;
+    height: 40px;
+    background-color: var(--blue-5);
+    position: absolute;
+    right: 50%;
+    bottom: -40px;
+    transform: translateX(50%);
+  }
+  .features-container > section:nth-of-type(2)::after {
+    top: -65px;
+    height: 65px;
+  }
+
+  .features-container > .center > section:nth-of-type(1):after,
+  .features-container > .center > section:nth-of-type(2):after {
+    content: "";
+    height: 7px;
+    width: 70px;
+    background-color: var(--blue-5);
+    position: absolute;
+    top: 50%;
+    z-index: -30;
+  }
+  .features-container > .center > section:nth-of-type(1):after {
+    right: -70px;
+  }
+  .features-container > .center > section:nth-of-type(2):after {
+    left: -70px;
+  }
+}
+/*End of features */
