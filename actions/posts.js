@@ -23,7 +23,7 @@ import {
   GET_POST_SUCCESS,
   GET_POST_FAIL,
 } from "../constants/posts";
-import { appData } from "../data/appData";
+import { appData } from "../variables/data";
 
 export const handleLikeAction = (postId) => async (dispatch) => {
   try {
@@ -180,9 +180,17 @@ export const createPost =
         },
       };
 
+      const fData = new FormData();
+
+      fData.append("coverImage", coverImage);
+      fData.append("title", title);
+      fData.append("subTitle", subTitle);
+      fData.append("markdown", markdown);
+      fData.append("category", category);
+
       const { data } = await axios.post(
         `${appData.serverUrl}/post/create-post`,
-        { coverImage, title, markdown, category, subTitle },
+        fData,
         config
       );
 

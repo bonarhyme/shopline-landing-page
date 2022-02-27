@@ -995,3 +995,56 @@ tr th {
   margin-bottom: 1rem;
 }
 /* end of auth */
+
+/* create post */
+.create form > * {
+  margin-top: 2rem;
+}
+
+.flex-it {
+  display: flex;
+  justify-content: space-between;
+}
+/* End of create post */
+
+/* Markdown */
+.markdown-container img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+
+.markdown-container th {
+  border: 1px solid black;
+  padding: 1rem;
+}
+.markdown-container td {
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.markdown-container > h1,
+.markdown-container > h2,
+.markdown-container > h3,
+.markdown-container > h4,
+.markdown-container > h5,
+.markdown-container > h6 {
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .markdown-container td {
+    padding: 0.5rem;
+  }
+}
+/* End of markdown */
+
+/* Preview */
+.center-article {
+  display: block;
+  margin: auto;
+}
+/* End of preview */

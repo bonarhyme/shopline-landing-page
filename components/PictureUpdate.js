@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import Image from "next/image";
 
@@ -8,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { updatePosterPicture } from "../actions/poster";
 import Loader from "./Loader";
 import Message from "./Message";
-import { useEffect } from "react";
 
 const PictureUpdate = () => {
   const dispatch = useDispatch();
