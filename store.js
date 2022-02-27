@@ -2,19 +2,15 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-// import {
-//   createReplyReducer,
-//   createCommentReducer,
-//   handleLikeReducer,
-//   getAllPostsReducer,
-//   approvePostReducer,
-//   deletePostReducer,
-//   deleteCommentReducer,
-//   deleteReplyReducer,
-//   createPostReducer,
-//   editPostReducer,
-//   getPostReducer,
-// } from "./reducers/post";
+import {
+  handleLikeReducer,
+  getAllPostsReducer,
+  approvePostReducer,
+  deletePostReducer,
+  createPostReducer,
+  editPostReducer,
+  getPostReducer,
+} from "./reducers/post";
 
 import {
   registerPosterReducer,
@@ -28,7 +24,7 @@ import {
 } from "./reducers/poster";
 
 const reducer = combineReducers({
-  // likeHandle: handleLikeReducer,
+  likeHandle: handleLikeReducer,
   posterRegister: registerPosterReducer,
   posterLogin: loginPosterReducer,
   posterProfileGet: getPosterProfileReducer,
@@ -37,12 +33,12 @@ const reducer = combineReducers({
   posterApprove: approvePosterReducer,
   posterDelete: deletePosterReducer,
   posterPicture: posterUpdatePictureReducer,
-  // postsAllGet: getAllPostsReducer,
-  // postApprove: approvePostReducer,
-  // postDelete: deletePostReducer,
-  // postCreate: createPostReducer,
-  // postEdit: editPostReducer,
-  // postGet: getPostReducer,
+  postsAllGet: getAllPostsReducer,
+  postApprove: approvePostReducer,
+  postDelete: deletePostReducer,
+  postCreate: createPostReducer,
+  postEdit: editPostReducer,
+  postGet: getPostReducer,
 });
 
 let posterInfoFromStorage = null;

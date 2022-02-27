@@ -1,11 +1,4 @@
 import {
-  CREATE_REPLY_REQUEST,
-  CREATE_REPLY_SUCCESS,
-  CREATE_REPLY_FAIL,
-  CREATE_REPLY_RESET,
-  CREATE_COMMENT_REQUEST,
-  CREATE_COMMENT_SUCCESS,
-  CREATE_COMMENT_FAIL,
   HANDLE_LIKE_REQUEST,
   HANDLE_LIKE_SUCCESS,
   HANDLE_LIKE_FAIL,
@@ -18,12 +11,6 @@ import {
   DELETE_POST_REQUEST,
   DELETE_POST_SUCCESS,
   DELETE_POST_FAIL,
-  DELETE_COMMENT_REQUEST,
-  DELETE_COMMENT_SUCCESS,
-  DELETE_COMMENT_FAIL,
-  DELETE_REPLY_REQUEST,
-  DELETE_REPLY_SUCCESS,
-  DELETE_REPLY_FAIL,
   CREATE_POST_REQUEST,
   CREATE_POST_SUCCESS,
   CREATE_POST_FAIL,
@@ -39,55 +26,7 @@ import {
 } from "../constants/posts";
 
 import { POSTER_LOGOUT } from "../constants/poster";
-export const createCommentReducer = (state = {}, action) => {
-  switch (action.type) {
-    case CREATE_COMMENT_REQUEST:
-      return {
-        loading: true,
-      };
 
-    case CREATE_COMMENT_SUCCESS:
-      return {
-        loading: false,
-        success: true,
-        serverReply: action.payload,
-      };
-    case CREATE_COMMENT_FAIL:
-      return { loading: false, success: false, error: action.payload };
-    // case CREATE_REPLY_RESET:
-    //   return { serverReply: null, success: true };
-
-    // case USER_LOGOUT:
-    //   return {};
-    default:
-      return state;
-  }
-};
-
-export const createReplyReducer = (state = {}, action) => {
-  switch (action.type) {
-    case CREATE_REPLY_REQUEST:
-      return {
-        loading: true,
-      };
-
-    case CREATE_REPLY_SUCCESS:
-      return {
-        loading: false,
-        success: true,
-        serverReply: action.payload,
-      };
-    case CREATE_REPLY_FAIL:
-      return { loading: false, success: false, error: action.payload };
-    case CREATE_REPLY_RESET:
-      return { serverReply: null, success: true };
-
-    case POSTER_LOGOUT:
-      return {};
-    default:
-      return state;
-  }
-};
 export const handleLikeReducer = (state = {}, action) => {
   switch (action.type) {
     case HANDLE_LIKE_REQUEST:
@@ -172,48 +111,7 @@ export const deletePostReducer = (state = {}, action) => {
       return state;
   }
 };
-export const deleteCommentReducer = (state = {}, action) => {
-  switch (action.type) {
-    case DELETE_COMMENT_REQUEST:
-      return {
-        loading: true,
-      };
 
-    case DELETE_COMMENT_SUCCESS:
-      return {
-        loading: false,
-        success: true,
-        serverReply: action.payload,
-      };
-    case DELETE_COMMENT_FAIL:
-      return { loading: false, success: false, error: action.payload };
-    case POSTER_LOGOUT:
-      return {};
-    default:
-      return state;
-  }
-};
-export const deleteReplyReducer = (state = {}, action) => {
-  switch (action.type) {
-    case DELETE_REPLY_REQUEST:
-      return {
-        loading: true,
-      };
-
-    case DELETE_REPLY_SUCCESS:
-      return {
-        loading: false,
-        success: true,
-        serverReply: action.payload,
-      };
-    case DELETE_REPLY_FAIL:
-      return { loading: false, success: false, error: action.payload };
-    case POSTER_LOGOUT:
-      return {};
-    default:
-      return state;
-  }
-};
 export const createPostReducer = (state = {}, action) => {
   switch (action.type) {
     case CREATE_POST_REQUEST:
