@@ -1048,3 +1048,47 @@ tr th {
   margin: auto;
 }
 /* End of preview */
+
+/* Page */
+
+.pages-container {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.pages-container span {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  margin: 0 1rem;
+}
+
+.page-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: 1px solid var(--green);
+  background-color: var(--green);
+  color: white;
+  margin-right: 0.25rem;
+}
+
+.page-item:hover {
+  background-color: rgba(0, 0, 0, 0.329);
+  color: white;
+}
+
+.page-item.active {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.801);
+  color: white;
+}
+
+.page-item.disable {
+  cursor: not-allowed;
+  background-color: rgba(0, 0, 0, 0.801);
+}
+/* End of page */

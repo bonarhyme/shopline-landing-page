@@ -110,7 +110,7 @@ const CreatePost = ({ newPost = true, editPost = false }) => {
           onClick={previewHandler}
         />
       ) : (
-        <div className="create">
+        <div className="create mb-5">
           <Form
             style={{
               width: "100%",
