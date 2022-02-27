@@ -20,6 +20,9 @@ import {
   DELETE_POSTER_REQUEST,
   DELETE_POSTER_SUCCESS,
   DELETE_POSTER_FAIL,
+  POSTER_UPDATE_PICTURE_SUCCESS,
+  POSTER_UPDATE_PICTURE_FAIL,
+  POSTER_UPDATE_PICTURE_REQUEST,
 } from "../constants/poster";
 import axios from "axios";
 import { appData } from "../variables/data";
@@ -122,6 +125,7 @@ export const getPosterProfile = () => async (dispatch, getState) => {
       `${appData.serverUrl}/poster/get-poster-profile`,
       config
     );
+
     dispatch({
       type: POSTER_PROFILE_SUCCESS,
       payload: data,
@@ -266,6 +270,48 @@ export const deletePoster = (posterId) => async (dispatch, getState) => {
   } catch (error) {
     dispatch({
       type: DELETE_POSTER_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
+
+//Update poster PICTURE
+export const updatePosterPicture = (image) => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: POSTER_UPDATE_PICTURE_REQUEST,
+    });
+    const {
+      posterLogin: { posterInfo },
+    } = getState();
+
+    const config = {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "multipart/form-data",
+        Authorization: ` Bearer ${posterInfo.token}`,
+      },
+    };
+
+    const fData = new FormData();
+
+    fData.append("image", image);
+
+    const { data } = await axios.put(
+      `${appData.serverUrl}/poster/update-picture`,
+      fData,
+      config
+    );
+    dispatch({
+      type: POSTER_UPDATE_PICTURE_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: POSTER_UPDATE_PICTURE_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message

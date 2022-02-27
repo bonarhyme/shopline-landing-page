@@ -24,6 +24,7 @@ import {
   getAllPostersReducer,
   approvePosterReducer,
   deletePosterReducer,
+  posterUpdatePictureReducer,
 } from "./reducers/poster";
 
 const reducer = combineReducers({
@@ -35,6 +36,7 @@ const reducer = combineReducers({
   postersAllGet: getAllPostersReducer,
   posterApprove: approvePosterReducer,
   posterDelete: deletePosterReducer,
+  posterPicture: posterUpdatePictureReducer,
   // postsAllGet: getAllPostsReducer,
   // postApprove: approvePostReducer,
   // postDelete: deletePostReducer,

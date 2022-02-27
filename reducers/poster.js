@@ -21,6 +21,9 @@ import {
   DELETE_POSTER_REQUEST,
   DELETE_POSTER_SUCCESS,
   DELETE_POSTER_FAIL,
+  POSTER_UPDATE_PICTURE_REQUEST,
+  POSTER_UPDATE_PICTURE_SUCCESS,
+  POSTER_UPDATE_PICTURE_FAIL,
 } from "../constants/poster";
 
 export const registerPosterReducer = (state = {}, action) => {
@@ -132,6 +135,19 @@ export const deletePosterReducer = (state = {}, action) => {
       return { loading: false, success: false, error: action.payload };
     case POSTER_LOGOUT:
       return {};
+    default:
+      return state;
+  }
+};
+
+export const posterUpdatePictureReducer = (state = {}, action) => {
+  switch (action.type) {
+    case POSTER_UPDATE_PICTURE_REQUEST:
+      return { loading: true };
+    case POSTER_UPDATE_PICTURE_SUCCESS:
+      return { loading: false, success: true, posterInfo: action.payload };
+    case POSTER_UPDATE_PICTURE_FAIL:
+      return { loading: false, error: action.payload };
     default:
       return state;
   }

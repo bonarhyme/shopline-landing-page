@@ -43,6 +43,11 @@ a {
   cursor: pointer;
 }
 
+main button.blue-btn {
+  background-color: var(--blue);
+  border: 1px solid var(--blue);
+}
+
 /* Nav */
 nav,
 .download-container {
