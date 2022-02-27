@@ -970,3 +970,23 @@ tr th {
   }
 }
 /*End of features */
+
+/* Auth */
+.form-container {
+  width: 100%;
+  max-width: 400px;
+
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0, 128, 0, 0.575);
+}
+
+.form-container form > * {
+  margin: 0.7rem;
+}
+
+.form-container form > button[type="submit"] {
+  margin: auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+/* end of auth */

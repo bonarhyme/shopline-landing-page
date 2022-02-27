@@ -22,7 +22,7 @@ import {
   DELETE_POSTER_FAIL,
 } from "../constants/poster";
 import axios from "axios";
-import { appData } from "../data/appData";
+import { appData } from "../variables/data";
 
 export const registerPoster =
   (name, email, username, password) => async (dispatch) => {

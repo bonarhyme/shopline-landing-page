@@ -6,4 +6,6 @@ export const appData = {
   logo,
   apple,
   google,
+  serverUrl: "http://localhost:4009/api",
+  categories: ["Entertainment", "Business", "World"],
 };
