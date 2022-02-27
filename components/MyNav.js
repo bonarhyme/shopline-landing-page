@@ -5,6 +5,9 @@ import { Container } from "react-bootstrap";
 import { appData } from "../variables/data";
 
 export const Logo = () => {
+  // const { loading, success, posterInfo, error } = useSelector(
+  //   (state) => state.posterProfileGet
+  // );
   return (
     <Link href="/" passHref>
       <div className="logo-container">

@@ -6,6 +6,7 @@ import { getPosterProfile, updatePosterProfile } from "../../actions/poster";
 import Layout from "../../components/Layout";
 import Loader from "../../components/Loader";
 import Message from "../../components/Message";
+import PictureUpdate from "../../components/PictureUpdate";
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -86,16 +87,8 @@ const Profile = () => {
             <Loader />
           ) : (
             <div className="form-container py-3">
+              <PictureUpdate res={posterInfo} />
               <Form onSubmit={handleSubmit}>
-                {picture && (
-                  <Image
-                    src={picture}
-                    width={600}
-                    height={600}
-                    objectFit="contain"
-                    alt={name}
-                  />
-                )}
                 <small className="text-muted mt-5 d-block">
                   ** Some fields have been locked
                 </small>

@@ -186,6 +186,7 @@ const Auth = () => {
                     variant="outline-primary"
                     size="sm"
                     onClick={() => setRegister((prev) => !prev)}
+                    className="blue-btn"
                   >
                     Login
                   </Button>{" "}

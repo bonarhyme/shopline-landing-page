@@ -284,15 +284,13 @@ export const updatePosterPicture = (image) => async (dispatch, getState) => {
     dispatch({
       type: POSTER_UPDATE_PICTURE_REQUEST,
     });
-    const {
-      posterLogin: { posterInfo },
-    } = getState();
+
+    const { posterLogin } = getState();
 
     const config = {
       headers: {
-        Accept: "application/json",
         "Content-Type": "multipart/form-data",
-        Authorization: ` Bearer ${posterInfo.token}`,
+        Authorization: `Bearer ${posterLogin?.posterInfo}`,
       },
     };
 
