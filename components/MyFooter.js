@@ -2,10 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { appData } from "../variables/data";
+import { useSelector } from "react-redux";
 
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const MyFooter = () => {
+  const { posterInfo } = useSelector((state) => state.posterProfileGet);
   return (
     <footer>
       <div className="footer">
@@ -51,6 +53,20 @@ const MyFooter = () => {
             <li>
               <Link href="#">Contact Us</Link>
             </li>
+            {posterInfo && (
+              <>
+                <li>
+                  <Link href="/poster/profile">
+                    {posterInfo?.data?.username}
+                  </Link>
+                </li>
+                {posterInfo?.data?.isAdmin && (
+                  <li>
+                    <Link href="/poster/dashboard">Dashboard</Link>
+                  </li>
+                )}
+              </>
+            )}
           </ul>
         </div>
         <div>
