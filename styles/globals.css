@@ -16,8 +16,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-family: "Nunito", sans-serif;
   /* width: 100%;
   max-width: 1800px; */
@@ -1051,6 +1049,12 @@ tr th {
   display: flex;
   justify-content: center;
 }
+.trim {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 /* End of preview */
 
 /* Page */
@@ -1096,3 +1100,27 @@ tr th {
   background-color: rgba(0, 0, 0, 0.801);
 }
 /* End of page */
+
+/* Posts */
+.posts-container {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.blog-h1 {
+  font-size: 1.5rem;
+}
+
+.blog-h2 {
+  font-size: 2.5rem;
+  color: var(--blue-5);
+}
+
+.br {
+  border-radius: 30px !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+/* End of posts */

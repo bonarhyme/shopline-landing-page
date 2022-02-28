@@ -48,7 +48,7 @@ const MyFooter = () => {
               <Link href="/faq">FAQ</Link>
             </li>
             <li>
-              <Link href="#">Blog</Link>
+              <Link href="/blog">Blog</Link>
             </li>
             <li>
               <Link href="#">Contact Us</Link>

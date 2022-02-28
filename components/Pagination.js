@@ -5,7 +5,7 @@ const Pagination = ({ page, pages, onClick, prevHandler, nextHandler }) => {
     return null;
   }
   return (
-    <div>
+    <div className="my-5">
       <ul className="pages-container">
         <li>
           <button
