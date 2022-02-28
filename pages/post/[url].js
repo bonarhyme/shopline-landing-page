@@ -14,6 +14,7 @@ import Message from "../../components/Message";
 import Loader from "../../components/Loader";
 // import { BlogSEO } from "../../components/SEO";
 import Layout from "../../components/Layout";
+import { BlogSEO } from "../../components/SEO";
 
 const PostPage = ({ serverRes, errorMessage }) => {
   const errorT = errorMessage && errorMessage;
@@ -107,7 +108,7 @@ const PostPage = ({ serverRes, errorMessage }) => {
 
   return (
     <Layout>
-      {/* {!errorT && (
+      {!errorT && (
         <BlogSEO
           authorDetails={poster}
           date={createdAt}
@@ -117,7 +118,7 @@ const PostPage = ({ serverRes, errorMessage }) => {
           url={url}
           images={[coverImage]}
         />
-      )} */}
+      )}
       <section className="py-5">
         {/* <textarea onChange={(e) => setText(e.target.value)} /> */}
 

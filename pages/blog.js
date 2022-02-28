@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import axios from "axios";
 
 import Posts from "../components/Posts";
+import { PageSEO } from "../components/SEO";
 
 const Headerr = () => {
   return (
@@ -18,9 +19,15 @@ const Headerr = () => {
 
 const blog = ({ serverRes }) => {
   return (
-    <Layout Headerr={Headerr}>
-      <Posts serverRes={serverRes} />
-    </Layout>
+    <>
+      <PageSEO
+        description="Shopline: Latest news, resources & tips for your business"
+        title="The Shopline Blog"
+      />
+      <Layout Headerr={Headerr}>
+        <Posts serverRes={serverRes} />
+      </Layout>
+    </>
   );
 };
 

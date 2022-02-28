@@ -13,6 +13,7 @@ import {
 import CreateButton from "../components/CreateButton";
 import jumia from "../images/jumia.svg";
 import Image from "next/image";
+import { PageSEO } from "../components/SEO";
 
 const companies = {
   "Whatsapp Business": {
@@ -85,6 +86,10 @@ const Compare = () => {
 
   return (
     <>
+      <PageSEO
+        title="Shopline: How we compare with others"
+        description="Shopline: How we compare with others"
+      />
       <main>
         <section className="header-nav remove-padding">
           <MyNav />

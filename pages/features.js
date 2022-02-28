@@ -7,6 +7,7 @@ import fire from "../public/fire.png";
 import smilling from "../public/smilling.png";
 import sunglasses from "../public/sunglasses.png";
 import profileSample from "../public/profile-sample.png";
+import { PageSEO } from "../components/SEO";
 
 const Card = ({ icon, title, text }) => {
   return (
@@ -26,6 +27,10 @@ const Features = () => {
   };
   return (
     <>
+      <PageSEO
+        title="Shopline: Our Features"
+        description="Shopline: Our Features"
+      />
       <main className="header-nav remove-padding features">
         <MyNav />
 

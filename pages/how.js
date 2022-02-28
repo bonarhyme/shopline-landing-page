@@ -3,12 +3,17 @@ import React from "react";
 import CreateButton from "../components/CreateButton";
 import MyFooter from "../components/MyFooter";
 import MyNav from "../components/MyNav";
+import { PageSEO } from "../components/SEO";
 
 import celebration from "../images/celebration.PNG";
 
 const HowItWorks = () => {
   return (
     <>
+      <PageSEO
+        title="Shopline: How shopline works"
+        description="Shopline: How shopline works"
+      />
       <main>
         <section className="header-nav remove-padding">
           <MyNav />

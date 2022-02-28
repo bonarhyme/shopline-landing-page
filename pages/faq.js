@@ -5,6 +5,7 @@ import MyFooter from "../components/MyFooter";
 import MyNav from "../components/MyNav";
 import Link from "next/link";
 import parse from "html-react-parser";
+import { PageSEO } from "../components/SEO";
 
 const data = [
   {
@@ -68,6 +69,10 @@ const Faq = () => {
 
   return (
     <>
+      <PageSEO
+        title="Shopline: Frequently Asked Questions"
+        description="Shopline:How may we help you?"
+      />
       <main className="faq">
         <section className="header-nav remove-padding">
           <MyNav />
