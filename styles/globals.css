@@ -1047,6 +1047,10 @@ tr th {
   display: block;
   margin: auto;
 }
+.center-img {
+  display: flex;
+  justify-content: center;
+}
 /* End of preview */
 
 /* Page */
