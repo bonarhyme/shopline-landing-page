@@ -5,6 +5,7 @@ import { appData } from "../variables/data";
 import { useSelector } from "react-redux";
 
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import SubScribeForm from "./SubScribeForm"
 
 const MyFooter = () => {
   const { posterInfo } = useSelector((state) => state.posterProfileGet);
@@ -87,18 +88,7 @@ const MyFooter = () => {
               </a>
             </li>
             <li>
-              <form>
-                <label htmlFor="email">SIGN UP FOR NEWSLETTER</label>
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Email address"
-                    id="email"
-                    name="email"
-                  />
-                  <button type="submit">Subscribe</button>
-                </div>
-              </form>
+              <SubScribeForm />
             </li>
           </ul>
         </div>

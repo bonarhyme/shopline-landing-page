@@ -9,8 +9,8 @@ export const appData = {
   serverUrl: "http://localhost:4009/api",
   categories: ["Entertainment", "Business", "World"],
   siteUrl: "http://localhost:3000",
-  twitter: "https://twitter.com",
-  socialBanner: "https://banner.com",
+  twitter: "https://twitter.com/shopline",
+  socialBanner: logo,
   author: "authorName",
-  siteLogo: appData.logo,
+  siteLogo: logo,
 };

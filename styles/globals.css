@@ -1124,3 +1124,12 @@ tr th {
   border-bottom-right-radius: 0 !important;
 }
 /* End of posts */
+
+/* Mail chimp */
+.newsletter-form-error {
+  background-color: #d61f32;
+  color: white;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+}
+/* End of mail chimp */
