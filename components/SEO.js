@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { appData } from "../data/appData";
+import { appData } from "../variables/data";
 
 export const CommonSEO = ({ title, description, ogType, ogImage, twImage }) => {
   const router = useRouter();
