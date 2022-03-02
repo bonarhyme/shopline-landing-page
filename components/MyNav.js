@@ -27,7 +27,7 @@ const MyNav = () => {
         <Logo />
         <div className="download-container">
           <a
-            href="#"
+            href={appData.android}
             className="nav-icon-container"
             target="_blank"
             rel="noopener noreferrer "
@@ -41,7 +41,7 @@ const MyNav = () => {
             />
           </a>
           <a
-            href="#"
+            href={appData.apple}
             target="_blank"
             rel="noopener noreferrer "
             className="nav-icon-container"

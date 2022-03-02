@@ -4,7 +4,6 @@ import React from "react";
 import { appData } from "../variables/data";
 import { useSelector } from "react-redux";
 
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import SubScribeForm from "./SubScribeForm";
 import Socials from "./Socials";
 

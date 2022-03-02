@@ -17,4 +17,6 @@ export const appData = {
   socialBanner: siteUrl + "/logo.png",
   author: "Ivan Busulwa",
   siteLogo: siteUrl + "/logo.png",
+  android: "https://play.google.com/store/apps/details?id=com.matt.shopline",
+  ios: "#",
 };
