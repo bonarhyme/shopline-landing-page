@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { appData } from "../variables/data";
+import { appData } from "../data/appData";
 
 export const CommonSEO = ({ title, description, ogType, ogImage, twImage }) => {
   const router = useRouter();
@@ -31,8 +31,8 @@ export const CommonSEO = ({ title, description, ogType, ogImage, twImage }) => {
 };
 
 export const PageSEO = ({ title, description }) => {
-  const ogImageUrl = appData.siteUrl + appData.socialBanner;
-  const twImageUrl = appData.siteUrl + appData.socialBanner;
+  const ogImageUrl = appData.socialBanner;
+  const twImageUrl = appData.socialBanner;
 
   return (
     <CommonSEO
@@ -68,7 +68,7 @@ export const BlogSEO = ({
   const featuredImages = imagesArr.map((img) => {
     return {
       "@type": "ImageObject",
-      url: `${appData.siteUrl}${img}`,
+      url: img,
     };
   });
 
@@ -103,7 +103,7 @@ export const BlogSEO = ({
       name: appData.author,
       logo: {
         "@type": "ImageObject",
-        url: `${appData.siteUrl}${appData.siteLogo}`,
+        url: appData.siteLogo,
       },
     },
     description: subTitle,

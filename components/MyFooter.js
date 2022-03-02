@@ -87,7 +87,9 @@ const MyFooter = () => {
           </ul>
         </div>
       </div>
-      <p className="copyright">© Copyright 2021 Shopline</p>
+      <p className="copyright">
+        © Copyright {new Date().getFullYear()} Shopline
+      </p>
     </footer>
   );
 };

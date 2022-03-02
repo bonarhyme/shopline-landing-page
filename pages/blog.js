@@ -6,6 +6,8 @@ import axios from "axios";
 import Posts from "../components/Posts";
 import { PageSEO } from "../components/SEO";
 import Socials from "../components/Socials";
+import Message from "../components/Message";
+import { appData } from "../variables/data";
 
 const Headerr = () => {
   return (
@@ -18,7 +20,7 @@ const Headerr = () => {
   );
 };
 
-const blog = ({ serverRes }) => {
+const blog = ({ serverRes, theError }) => {
   return (
     <>
       <PageSEO
@@ -26,7 +28,11 @@ const blog = ({ serverRes }) => {
         title="The Shopline Blog"
       />
       <Layout Headerr={Headerr}>
-        <Posts serverRes={serverRes} />
+        {serverRes ? (
+          <Posts serverRes={serverRes} />
+        ) : (
+          <Message variant="danger">{theError}</Message>
+        )}
         <article className="faq-compel">
           <h2>
             FOLLOW US <br />
@@ -44,6 +50,7 @@ const blog = ({ serverRes }) => {
 
 export async function getServerSideProps() {
   let serverRes = null;
+  let theError = null;
   try {
     const config = {
       headers: {
@@ -57,11 +64,14 @@ export async function getServerSideProps() {
     );
     serverRes = data;
   } catch (error) {
-    console.log(error);
+    theError =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
   }
 
   return {
-    props: { serverRes },
+    props: { serverRes, theError },
   };
 }
 

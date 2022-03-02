@@ -11,6 +11,7 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import CreateButton from "../components/CreateButton";
+import safeboda from "../images/boda.png";
 import jumia from "../images/jumia.svg";
 import Image from "next/image";
 import { PageSEO } from "../components/SEO";
@@ -73,7 +74,16 @@ const companies = {
     custom: false,
     real: false,
     engage: true,
-    logo: <FaBox size={30} />,
+    logo: (
+      <Image
+        src={safeboda}
+        width={80}
+        height={40}
+        objectFit="contain"
+        alt="safe boda"
+        size={30}
+      />
+    ),
   },
 };
 
