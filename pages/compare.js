@@ -11,7 +11,7 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import CreateButton from "../components/CreateButton";
-import safeboda from "../images/boda.png";
+import safeboda from "../images/boda.PNG";
 import jumia from "../images/jumia.svg";
 import Image from "next/image";
 import { PageSEO } from "../components/SEO";
