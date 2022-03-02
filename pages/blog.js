@@ -5,6 +5,7 @@ import axios from "axios";
 
 import Posts from "../components/Posts";
 import { PageSEO } from "../components/SEO";
+import Socials from "../components/Socials";
 
 const Headerr = () => {
   return (
@@ -26,6 +27,16 @@ const blog = ({ serverRes }) => {
       />
       <Layout Headerr={Headerr}>
         <Posts serverRes={serverRes} />
+        <article className="faq-compel">
+          <h2>
+            FOLLOW US <br />
+          </h2>
+          <p>
+            For the latest news, inspirations & resources to grow your business
+            online
+          </p>
+          <Socials />
+        </article>
       </Layout>
     </>
   );

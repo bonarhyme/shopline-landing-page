@@ -31,8 +31,8 @@ export default function Home() {
         <div id="why">
           <MyWhyShopline />
         </div>
-        <MyFooter />
       </main>
+      <MyFooter />
     </>
   );
 }

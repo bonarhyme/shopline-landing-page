@@ -5,7 +5,8 @@ import { appData } from "../variables/data";
 import { useSelector } from "react-redux";
 
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
-import SubScribeForm from "./SubScribeForm"
+import SubScribeForm from "./SubScribeForm";
+import Socials from "./Socials";
 
 const MyFooter = () => {
   const { posterInfo } = useSelector((state) => state.posterProfileGet);
@@ -76,17 +77,10 @@ const MyFooter = () => {
             <li>
               <address>Makerere University</address>
             </li>
-            <li className="social-icons">
-              <a href="#">
-                <FaFacebook size={30} />
-              </a>
-              <a href="#">
-                <FaTwitter size={30} />
-              </a>
-              <a href="#">
-                <FaInstagram size={30} />
-              </a>
+            <li>
+              <Socials />
             </li>
+
             <li>
               <SubScribeForm />
             </li>

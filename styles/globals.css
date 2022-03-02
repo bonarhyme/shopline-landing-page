@@ -23,7 +23,7 @@ body {
   justify-content: center; */
 }
 
-* {
+body > *:not(svg) {
   color: var(--text);
   font-family: "Nunito", sans-serif;
 }
@@ -449,7 +449,7 @@ header h1 > span::before {
   height: 60px;
   width: 4px;
   transform: rotate(-40deg);
-  background-color: var(--text);
+  background-color: var(--blue);
   position: absolute;
   border-radius: 5px;
 }
@@ -495,6 +495,11 @@ ul.ul > li > form {
   margin-top: 1rem;
 }
 
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 .social-icons > a {
   margin-right: 1rem;
 }
