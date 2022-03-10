@@ -7,6 +7,7 @@ import { FaCheck, FaTimes } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { approvePost, deletePost, getAllPosts } from "../actions/posts";
+import EditButton from "./EditButton";
 // import EditButton from "./EditButton";
 import Loader from "./Loader";
 import Message from "./Message";
@@ -134,7 +135,7 @@ const AdminPostsList = () => {
                 <th>Views</th>
                 <th>Likes</th>
                 <th>Approve</th>
-                {/* <th>Edit</th> */}
+                <th>Edit</th>
                 <th>Delete</th>
               </tr>
             </thead>
@@ -201,9 +202,9 @@ const AdminPostsList = () => {
                           </Button>
                         )}
                       </td>
-                      {/* <td>
+                      <td>
                         <EditButton slug={slug} />
-                      </td> */}
+                      </td>
                       <td>
                         {dLoading ? (
                           <Loader width="30px" height="30px" />

@@ -2,25 +2,19 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { appData } from "../variables/data";
 
-export const CommonSEO = ({ title, description, ogType, ogImage, twImage }) => {
+export const PageSEO = ({ title, description, ogType, ogImage, twImage }) => {
   const router = useRouter();
   return (
     <Head>
       <title>{title}</title>
       <meta name="robots" content="follow, index" />
       <meta name="description" content={description} />
-      <meta property="og:url" content={`${appData.siteUrl}${router.asPath}`} />
+      <meta property="og:url" content={`${appData.siteUrl}${router?.asPath}`} />
       <meta property="og:type" content={ogType} />
       <meta property="og:site_name" content={appData.title} />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
-      {ogImage.constructor.name === "Array" ? (
-        ogImage.map(({ url }) => (
-          <meta property="og:image" content={url} key={url} />
-        ))
-      ) : (
-        <meta property="og:image" content={ogImage} key={ogImage} />
-      )}
+      <meta property="og:image" content={ogImage} key={ogImage} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={appData.twitter} />
       <meta name="twitter:title" content={title} />
@@ -30,19 +24,10 @@ export const CommonSEO = ({ title, description, ogType, ogImage, twImage }) => {
   );
 };
 
-export const PageSEO = ({ title, description }) => {
-  const ogImageUrl = appData.socialBanner;
-  const twImageUrl = appData.socialBanner;
-
-  return (
-    <CommonSEO
-      title={title}
-      description={description}
-      ogType="website"
-      ogImage={ogImageUrl}
-      twImage={twImageUrl}
-    />
-  );
+PageSEO.defaultProps = {
+  ogType: "website",
+  ogImage: appData.socialBanner,
+  twImage: appData.socialBanner,
 };
 
 export const BlogSEO = ({
@@ -52,25 +37,15 @@ export const BlogSEO = ({
   date,
   lastMod,
   url,
-  images = [],
+  image = "",
+  description,
+  ogType,
+  ogImage,
+  twImage,
 }) => {
   const router = useRouter();
   const publishedAt = new Date(date).toDateString();
   const modifiedAt = new Date(lastMod || date).toDateString();
-  let imagesArr =
-    images.length === 0
-      ? [appData.socialBanner]
-      : typeof images === "string"
-      ? [images]
-      : images;
-
-  //   This should point to the images on the blog
-  const featuredImages = imagesArr.map((img) => {
-    return {
-      "@type": "ImageObject",
-      url: img,
-    };
-  });
 
   let authorList;
 
@@ -94,7 +69,10 @@ export const BlogSEO = ({
       "@id": url,
     },
     headline: title,
-    image: featuredImages,
+    image: {
+      "@type": "ImageObject",
+      url: image,
+    },
     datePublished: publishedAt,
     dateModified: modifiedAt,
     author: authorList,
@@ -103,39 +81,39 @@ export const BlogSEO = ({
       name: appData.author,
       logo: {
         "@type": "ImageObject",
-        url: appData.siteLogo,
+        url: image,
       },
     },
     description: subTitle,
   };
 
-  const twImageUrl = featuredImages[0].url;
-
   return (
-    <>
-      <CommonSEO
-        title={title}
-        description={subTitle}
-        ogType="article"
-        ogImage={featuredImages}
-        twImage={twImageUrl}
+    <Head>
+      <title>{title}</title>
+      <meta name="robots" content="follow, index" />
+      <meta name="description" content={description} />
+      <meta property="og:url" content={`${appData.siteUrl}${router?.asPath}`} />
+      <meta property="og:type" content={ogType} />
+      <meta property="og:site_name" content={appData.title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:title" content={title} />
+      <meta property="og:image" content={ogImage} key={ogImage} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content={appData.twitter} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={twImage} />
+      {date && <meta property="article:published_time" content={publishedAt} />}
+      {lastMod && (
+        <meta property="article:modified_time" content={modifiedAt} />
+      )}
+      <link rel="canonical" href={`${appData.siteUrl}${router.asPath}`} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData, null, 2),
+        }}
       />
-
-      <Head>
-        {date && (
-          <meta property="article:published_time" content={publishedAt} />
-        )}
-        {lastMod && (
-          <meta property="article:modified_time" content={modifiedAt} />
-        )}
-        <link rel="canonical" href={`${appData.siteUrl}${router.asPath}`} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData, null, 2),
-          }}
-        />
-      </Head>
-    </>
+    </Head>
   );
 };

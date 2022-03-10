@@ -4,6 +4,7 @@ import { FaMoneyBillAlt } from "react-icons/fa";
 import { HiOutlineLightningBolt } from "react-icons/hi";
 import { FiWifiOff } from "react-icons/fi";
 import { BiGitBranch } from "react-icons/bi";
+import { appData } from "../variables/data";
 
 const MyWhyShopline = () => {
   return (
@@ -53,7 +54,9 @@ const MyWhyShopline = () => {
       </div>
 
       <div className="auth-container">
-        <a href="#">Create Shop for Free</a>
+        <a href={appData.android} target="_blank" rel="noreferrer noopener">
+          Create Shop for Free
+        </a>
       </div>
     </section>
   );

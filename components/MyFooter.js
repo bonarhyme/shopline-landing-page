@@ -1,14 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { appData } from "../variables/data";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { getPosterProfile, logoutPosterNow } from "../actions/poster";
 
 import SubScribeForm from "./SubScribeForm";
 import Socials from "./Socials";
+import { Button } from "react-bootstrap";
 
 const MyFooter = () => {
+  const dispatch = useDispatch();
+
+  const { success: successLog } = useSelector((store) => store.posterLogin);
+
+  useEffect(() => {
+    dispatch(getPosterProfile());
+  }, [dispatch, successLog]);
+
+  const logoutPoster = () => {
+    dispatch(logoutPosterNow());
+  };
   const { posterInfo } = useSelector((state) => state.posterProfileGet);
+
   return (
     <footer>
       <div className="footer">
@@ -51,9 +65,7 @@ const MyFooter = () => {
             <li>
               <Link href="/blog">Blog</Link>
             </li>
-            <li>
-              <Link href="#">Contact Us</Link>
-            </li>
+
             {posterInfo && (
               <>
                 <li>
@@ -67,6 +79,18 @@ const MyFooter = () => {
                   </li>
                 )}
               </>
+            )}
+
+            {posterInfo?.data ? (
+              <li>
+                <Button variant="danger" size="sm" onClick={logoutPoster}>
+                  Logout
+                </Button>{" "}
+              </li>
+            ) : (
+              <li>
+                <Link href="/poster/auth">Auth</Link>
+              </li>
             )}
           </ul>
         </div>

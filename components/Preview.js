@@ -88,6 +88,14 @@ const Preview = ({
                 alt={title}
                 objectFit="cover"
               />
+            ) : coverImage !== "" ? (
+              <Image
+                src={coverImage}
+                width={600}
+                height={600}
+                alt={title}
+                objectFit="cover"
+              />
             ) : (
               <Message variant="danger">
                 Please select / re-select a cover image

@@ -37,7 +37,7 @@ const PictureUpdate = () => {
         {uLoading && <Loader />}
         {uSuccess && <Message variant="success">{uPosterInfo.message}</Message>}
         {uError && <Message variant="danger">{error}</Message>}
-        {!image && posterInfo?.data && (
+        {!image && posterInfo?.data?.picture && (
           <Image
             src={posterInfo?.data?.picture}
             alt=""
@@ -75,7 +75,12 @@ const PictureUpdate = () => {
             id="image"
           />
         </Form.Group>
-        <Button type="submit" variant="outline-primary" size="sm">
+        <Button
+          type="submit"
+          variant="outline-primary"
+          size="sm"
+          className="my-3 blue-btn"
+        >
           Update Profile picture
         </Button>
       </Form>

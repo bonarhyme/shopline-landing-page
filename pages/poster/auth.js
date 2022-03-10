@@ -69,17 +69,17 @@ const Auth = () => {
 
   useEffect(() => {
     let timeOut;
-    if (successLog) {
+    if (successLog || posterInfoLog) {
       setValue();
       timeOut = setTimeout(() => {
         if (typeof window !== "undefined") {
-          document.location.href = "/poster/profile";
+          document.location.href = "/";
         }
       }, 3000);
     }
     return () => clearTimeout(timeOut);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [successLog]);
+  }, [successLog, posterInfoLog]);
 
   return (
     <Layout>
@@ -104,8 +104,8 @@ const Auth = () => {
             {loadingLog && <Loader />}
             {posterInfoLog && (
               <Message variant="success">
-                {posterInfoLog.message}.<br /> **Redirecting to your profile in
-                3 seconds..
+                {posterInfoLog.message}.<br /> **Redirecting to home page in 3
+                seconds..
               </Message>
             )}
             {register && (
@@ -174,8 +174,8 @@ const Auth = () => {
               </Form.Group>
             )}
 
-            <Button size="lg" type="submit">
-              Submit
+            <Button size="lg" type="submit" className="my-3 blue-btn">
+              {register ? "Register" : "Login"}
             </Button>
 
             <p>
@@ -186,7 +186,7 @@ const Auth = () => {
                     variant="outline-primary"
                     size="sm"
                     onClick={() => setRegister((prev) => !prev)}
-                    className="blue-btn"
+                    // className="blue-btn"
                   >
                     Login
                   </Button>{" "}
