@@ -9,7 +9,7 @@ import { editPost, getPost } from "../actions/posts";
 import { EDIT_POST_RESET, GET_POST_RESET } from "../constants/posts";
 import Loader from "./Loader";
 import Message from "./Message";
-import Preview from "./Preview";
+import Preview from "./PreviewEdit";
 import { appData } from "../variables/data";
 
 const cats = appData.categories;
@@ -90,7 +90,7 @@ const EditPost = () => {
     <>
       {preview ? (
         <Preview
-          coverImage={coverImage || gServerReply?.data?.response?.coverImage}
+          coverImage={gServerReply?.data?.response?.coverImage}
           subTitle={subTitle}
           title={title}
           category={category}
@@ -123,7 +123,7 @@ const EditPost = () => {
             {success && (
               <Message variant="success">{serverReply.message}</Message>
             )}
-            <Form.Group>
+            {/* <Form.Group>
               <Form.Label>Cover Image</Form.Label>
 
               <Form.Control
@@ -139,7 +139,7 @@ const EditPost = () => {
                 id="coverImage"
                 // value={coverImage}
               />
-            </Form.Group>
+            </Form.Group> */}
             <Form.Group>
               <Form.Label>Title</Form.Label>
               <Form.Control
