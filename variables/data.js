@@ -2,15 +2,16 @@ import logo from "../public/logo.png";
 import apple from "../public/apple.png";
 import google from "../public/google.png";
 
-const siteUrl = "http://localhost:3000";
+const siteUrl = "https://shopline-landing-page.vercel.app";
 
 export const appData = {
   logo,
   apple,
   google,
-  serverUrl: "http://localhost:4009/api",
+  serverUrl: "https://shopline-blog-api.herokuapp.com/api",
   categories: ["Entertainment", "Business", "World"],
-  siteUrl: "http://localhost:3000",
+  siteUrl: "https://shopline-landing-page.vercel.app",
+  // serverUrl: "http://localhost:4009",
   twitter: "https://twitter.com/shopline",
   instagram: "https://instagram.com/shopline",
   facebook: "https://facebook.com/shopline",
@@ -19,4 +20,6 @@ export const appData = {
   siteLogo: siteUrl + "/logo.png",
   android: "https://play.google.com/store/apps/details?id=com.matt.shopline",
   ios: "#",
+  description:
+    "Shopline Blog:Create your beautiful shop in 2 minutes, No code, No website needed",
 };
