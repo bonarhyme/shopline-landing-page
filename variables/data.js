@@ -8,8 +8,8 @@ export const appData = {
   logo,
   apple,
   google,
-  // serverUrl: "https://shopline-blog-api.herokuapp.com/api",
-  serverUrl: "http://localhost:4009/api",
+  serverUrl: "https://shopline-blog-api.herokuapp.com/api",
+  // serverUrl: "http://localhost:4009/api",
   categories: ["Entertainment", "Business", "World"],
   siteUrl: "https://shopline-landing-page.vercel.app",
 
